@@ -50,8 +50,16 @@ uint8_t buttoninterruptinit(const uint8_t button)
 		GPIO_NO_PUPD,
 		0
 	};
+
 	GPIO_PClk(buttonpinhandle.pGPIOx, 1);
 	GPIO_Init(&buttonpinhandle);
+
+	if (buttonhandle.pinnum <= 4)
+		GPIO_IRQInterruptConf( (buttonhandle.pinnum + 5), 1);
+	else if (buttonhandle.pinnum <= 9)
+		GPIO_IRQInterruptConf(23, 1);
+	else
+		GPIO_IRQInterruptConf(40, 1);
 
 	return(0);
 
