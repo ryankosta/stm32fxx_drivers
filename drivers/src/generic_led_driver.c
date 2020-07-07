@@ -37,7 +37,7 @@ uint8_t ledinit(const uint8_t led)
 
 }
 
-uint8_t ledon(uint8_t led)
+uint8_t ledon(const uint8_t led)
 {
 	LED_handle_t ledhandle = ( ledinfo(led) );
 	GPIO_WritePin(ledhandle.pGPIOx, ledhandle.pinnum, 1);
@@ -45,14 +45,20 @@ uint8_t ledon(uint8_t led)
 	return(0);
 }
 
-uint8_t ledoff(uint8_t led)
+uint8_t ledoff(const uint8_t led)
 {
 	LED_handle_t ledhandle = ( ledinfo(led) );
 	GPIO_WritePin(ledhandle.pGPIOx, ledhandle.pinnum, 0);
 
 	return(0);
 }
+uint8_t ledtoggle(const uint8_t led)
+{
+	LED_handle_t ledhandle = ( ledinfo(led) );
+	GPIO_ToggleOutputPin(ledhandle.pGPIOx, ledhandle.pinnum);
 
+	return(0);
+}
 /*led selector, implemented in its own function to allow easier addition of leds*/
 static LED_handle_t ledinfo(const uint8_t led){
 

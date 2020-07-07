@@ -21,6 +21,9 @@ uint8_t ledinit(const uint8_t led); /*Initializes and sets up led*/
 uint8_t ledon(const uint8_t led); /*Turns on led*/
 
 uint8_t ledoff(const uint8_t led); /*Turns off led*/
+
+uint8_t ledtoggle(const uint8_t led); /*Toggles led*/
+
 /*Structures*/
 
 
