@@ -50,6 +50,10 @@ uint8_t buttoninterruptinit(const uint8_t button)
 		GPIO_NO_PUPD,
 		0
 	};
+	GPIO_PClk(buttonpinhandle.pGPIOx, 1);
+	GPIO_Init(&buttonpinhandle);
+
+	return(0);
 
 }
 
