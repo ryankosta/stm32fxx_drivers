@@ -4,6 +4,10 @@
  *  Created on: Jul 7, 2020
  *      Author: rkosta
  */
+/*
+ * NOTE: DEFINES INTERRUPT FUNCTION EXTI0, DONT INCLUDE IN BUILD UNLESS TO TEST DRIVER OR BOARD FUNCTIONALITY
+ */
+
 
 #ifndef GENERIC_BUTTON_DRIVER_TEST_H_
 #define GENERIC_BUTTON_DRIVER_TEST_H_
@@ -22,7 +26,7 @@
 /*
  * Functions
  */
-
+uint8_t buttoninterrupttest(const uint8_t button);
 
 
 #endif /* GENERIC_BUTTON_DRIVER_TEST_H_ */
