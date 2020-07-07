@@ -181,7 +181,7 @@ uint8_t GPIO_IRQInterruptConf(const uint8_t IRQnum,const uint8_t status)
 void GPIO_IRQHandle(uint8_t pin)
 {
 	/*Clear EXTI Pending Register corresponding to pin number*/
-	if(EXTI->PR & (1 << pin));		/*if pin's bitpos is not clear*/
+	if(EXTI->PR & (1 << pin))		/*if pin's bitpos is not clear*/
 	{
 		EXTI->PR |= (1 << pin);		/*clear bitpos by writing 1 to it as per register definition*/
 	}
