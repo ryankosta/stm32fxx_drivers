@@ -5,6 +5,13 @@
  *      Author: rkosta
  */
 #include "generic_button_driver_test.h"
-uint8_t buttoninterrupttest(const uint8_t button){
+uint8_t buttoninterrupttest(const uint8_t button)
+{
 	buttoninterruptinit(button);
+}
+void EXTI0_IRQHandler(void)
+{
+	ledinit(LED_BLUELED);
+	ledon(LED_BLUELED);
+	GPIO_IRQHandle(0);
 }
