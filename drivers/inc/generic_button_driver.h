@@ -17,9 +17,9 @@
 /*
  * Function declarations
  */
-uint8_t buttonread(uint8_t button);
+uint8_t buttonread(const uint8_t button);
 uint8_t buttoninit(const uint8_t button);
-uint8_t buttoninterruptinit(const uint8_t button);
+uint8_t buttoninterruptinit(uint8_t button);
 
 /*
  * Macros

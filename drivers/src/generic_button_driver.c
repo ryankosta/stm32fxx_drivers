@@ -37,6 +37,21 @@ uint8_t buttoninit(const uint8_t button)
 	return(0);
 
 }
+uint8_t buttoninterruptinit(const uint8_t button)
+{
+	Button_handle_t buttonhandle;
+	buttonhandle = ( buttoninfo(button) );
+
+	GPIO_PinConfig_t buttonpinconf = {
+		buttonhandle.pinnum,
+		GPIO_MODE_IN_FT,
+		GPIO_OUT_TYPE_PP,
+		GPIO_SPEED_LOW,
+		GPIO_NO_PUPD,
+		0
+	};
+
+}
 
 uint8_t buttonread(uint8_t button)
 {
